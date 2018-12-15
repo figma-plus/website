@@ -42,7 +42,9 @@ body {
     font-style: normal;
     font-size: 1rem;
     color: #000;
+    max-width: 1440px;
     min-width: 640px;
+    margin: 0 auto;
 }
 
 h1, h2, h3, h4, h5 {

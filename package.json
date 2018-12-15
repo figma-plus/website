@@ -16,6 +16,7 @@
     "cssnano": "^4.1.7",
     "parcel-bundler": "^1.10.3",
     "parcel-plugin-clean-easy": "^1.0.2",
+    "parcel-plugin-static-files-copy": "^1.2.4",
     "postcss-extend-rule": "^2.0.0",
     "postcss-inline-svg": "^3.1.1",
     "postcss-nested": "^4.1.0",
@@ -25,5 +26,6 @@
   },
   "parcelCleanPaths": [
     "docs"
-  ]
+  ],
+  "staticPath": ["src/static"]
 }

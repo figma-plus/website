@@ -17,18 +17,22 @@ class App {
     handleOS() {
 
         let osLabel = document.querySelector('.js-os');
+        let downloadOrSoon = document.querySelector('.js-download-or-soon');
 
         switch (this.os) {
             case 'MacIntel' || 'Mac68K' || 'MacPPC' || 'iPhone' || 'iPad':
                 osLabel.innerHTML = 'Mac'
+                downloadOrSoon.innerHTML = 'Download on'
                 osLabel.parentElement.classList.add('is-mac')
                 break;
             case 'Win32' || 'Win16' || 'Windows':
                 osLabel.innerHTML = 'Windows'
+                downloadOrSoon.innerHTML = 'Coming soon to'
                 osLabel.parentElement.classList.add('is-windows')
                 break;
             case 'Linux':
                 osLabel.innerHTML = 'Linux'
+                downloadOrSoon.innerHTML = 'Coming soon to'
                 osLabel.parentElement.classList.add('is-linux')
                 break;
             default:
@@ -59,10 +63,12 @@ class App {
             panelLogo = logos.children[2],
             panelShot = document.querySelector('.c-shot'),
             content = document.querySelector('.l-text'),
-            bg = document.querySelector('.bg');
+            bg = document.querySelector('.bg'),
+            body = document.body;
 
 
         masterTL
+            .to(body, 0.2, {opacity:1})
             .from(figmaLogo, 1, {opacity:0, x: -40}, 's-logo')
             .from(divider, 1, {opacity:0}, 's-logo')
             .from(panelLogo, 1, {opacity:0, x: 40}, 's-logo')

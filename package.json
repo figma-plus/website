@@ -21,11 +21,12 @@
     "postcss-inline-svg": "^3.1.1",
     "postcss-nested": "^4.1.0",
     "postcss-plugin": "^1.0.0",
-    "postcss-safe-important": "^1.1.0",
     "precss": "^4.0.0"
   },
   "parcelCleanPaths": [
     "docs"
   ],
-  "staticPath": ["src/static"]
+  "staticPath": [
+    "src/static"
+  ]
 }

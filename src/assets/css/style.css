@@ -45,6 +45,7 @@ body {
     max-width: 1440px;
     min-width: 640px;
     margin: 0 auto;
+    opacity: 0;
 }
 
 h1, h2, h3, h4, h5 {
@@ -304,6 +305,11 @@ nav a {
     &.is-chrome::before {
         background: svg-inline(chromeIcon);
         background-size: contain;
+    }
+
+    &.is-windows, 
+    &.is-linux {
+        display: none;
     }
 }
 

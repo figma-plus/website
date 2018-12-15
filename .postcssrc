@@ -1,0 +1,12 @@
+{
+  "plugins": {
+    "precss": {},
+    "postcss-extend-rule": {},
+    "postcss-inline-svg": {},
+    "postcss-nested": {},
+    "postcss-plugin": {},
+    "postcss-safe-important": {},
+    "autoprefixer": { "browsers": ["last 1 version"] },
+    "cssnano": {},
+  }
+}

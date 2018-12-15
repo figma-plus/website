@@ -12,16 +12,18 @@
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
-    "autoprefixer": "^9.3.1",
+    "autoprefixer": "^9.4.2",
     "cssnano": "^4.1.7",
     "parcel-bundler": "^1.10.3",
     "parcel-plugin-clean-easy": "^1.0.2",
     "postcss-extend-rule": "^2.0.0",
     "postcss-inline-svg": "^3.1.1",
     "postcss-nested": "^4.1.0",
-    "postcss-plugin": "^1.0.0"
+    "postcss-plugin": "^1.0.0",
+    "postcss-safe-important": "^1.1.0",
+    "precss": "^4.0.0"
   },
   "parcelCleanPaths": [
-    "dist"
+    "docs"
   ]
 }

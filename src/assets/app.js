@@ -18,17 +18,28 @@ class App {
 	handleOS() {
 		let osLabel = document.querySelector('.js-os');
 		let downloadOrSoon = document.querySelector('.js-download-or-soon');
+		let downloadLink = document.querySelector('.download-link');
 
 		switch (this.os) {
 			case 'MacIntel' || 'Mac68K' || 'MacPPC' || 'iPhone' || 'iPad':
 				osLabel.innerHTML = 'Mac';
 				downloadOrSoon.innerHTML = 'Download on';
 				osLabel.parentElement.classList.add('is-mac');
+				fetch('https://api.github.com/repos/figma-plus/installer/releases', { cache: 'no-cache' })
+					.then(response => response.json())
+					.then(releases => {
+						downloadLink.href = releases[0].assets.find(asset => asset.name.includes('mac')).browser_download_url;
+					});
 				break;
 			case 'Win32' || 'Win16' || 'Windows':
 				osLabel.innerHTML = 'Windows';
 				downloadOrSoon.innerHTML = 'Coming soon to';
 				osLabel.parentElement.classList.add('is-windows');
+				fetch('https://api.github.com/repos/figma-plus/installer/releases', { cache: 'no-cache' })
+					.then(response => response.json())
+					.then(releases => {
+						downloadLink.href = releases[0].assets.find(asset => asset.name.includes('exe')).browser_download_url;
+					});
 				break;
 			case 'Linux':
 				osLabel.innerHTML = 'Linux';
@@ -60,7 +71,7 @@ class App {
 		fetch('https://api.github.com/repos/figma-plus/figma-plus/releases', { cache: 'no-cache' })
 			.then(response => response.json())
 			.then(releases => {
-				version.innerHTML.replace('v 1.0.0', 'v ' + releases[0].tag_name);
+				version.innerHTML = version.innerHTML.replace('v 1.0.0', 'v ' + releases[0].tag_name);
 			});
 	}
 

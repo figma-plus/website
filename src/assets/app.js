@@ -78,7 +78,13 @@ class App {
 	handlePageLoading() {
 		let masterTL = new TimelineMax({
 			force3D: true,
-			delay: 1
+			delay: 1,
+			onStart: () => {
+				document.body.style.pointerEvents = 'none';
+			},
+			onComplete: () => {
+				document.body.style.pointerEvents = 'auto';
+			}
 		});
 
 		let logos = document.querySelector('.c-logos'),
@@ -99,25 +105,10 @@ class App {
 
 		masterTL
 			.from(
-				panelShot,
-				0.5,
-				{
-					opacity: 0,
-					y: 40,
-					scale: 0.95,
-					transformOrigin: 'center bottom'
-				},
-				's-shot'
+				panelShot, 0.5, { opacity: 0, y: 40, scale: 0.95, transformOrigin: 'center bottom' }, 's-shot'
 			)
 			.from(
-				bg,
-				1,
-				{
-					opacity: 0,
-					scale: 0.9,
-					transformOrigin: 'center bottom'
-				},
-				's-shot'
+				bg, 1, { opacity: 0, scale: 0.9, transformOrigin: 'center bottom' }, 's-shot'
 			);
 
 		masterTL

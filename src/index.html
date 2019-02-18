@@ -1,102 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Figma Plugin Panel</title>
+		<link rel="stylesheet" href="assets/css/style.css" />
+		<link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png" />
+		<link rel="manifest" href="assets/images/favicon/site.webmanifest" />
+		<link rel="mask-icon" href="assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+		<link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
+		<meta name="msapplication-TileColor" content="#da532c" />
+		<meta name="msapplication-config" content="assets/images/favicon/browserconfig.xml" />
+		<meta name="theme-color" content="#ffffff" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.2.3/css-doodle.min.js"></script>
+	</head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Figma Plugin Panel</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="assets/images/favicon/site.webmanifest">
-    <link rel="mask-icon" href="assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-config" content="assets/images/favicon/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.2.3/css-doodle.min.js"></script>
-</head>
+	<body>
+		<header>
+			<nav>
+				<a href="#" target="_blank">Documentation</a>
+				<a href="#" target="_blank" class="is-disabled">Developer Plugin API</a>
+				<a href="#" target="_blank">Need Help?</a>
+			</nav>
+		</header>
 
-<body>
-    <header>
-        <nav>
-            <a href="#" target="_blank">Documentation</a>
-            <a href="#" target="_blank" class="is-disabled">Developer Plugin API</a>
-            <a href="#" target="_blank">Need Help?</a>
-        </nav>
-    </header>
+		<main class="l-container">
+			<div class="c-logos">
+				<object type="image/svg+xml" data="assets/images/figma-logo.svg"></object>
+				<span>/</span>
+				<object type="image/svg+xml" data="assets/images/panel-logo.svg"></object>
+			</div>
 
-    <main class="l-container">
+			<div class="l-text">
+				<div class="c-intro">
+					<h1>Figma Plugin Manager</h1>
+					<p>Install and manage third-party Developer extensions in Figma</p>
+				</div>
 
-        <div class="c-logos">
-            <object type="image/svg+xml" data="assets/images/figma-logo.svg"></object>
-            <span>/</span>
-            <object type="image/svg+xml" data="assets/images/panel-logo.svg"></object>
-        </div>
+				<div class="c-actions">
+					<a href="https://github.com/cdes/figma-plugins-desktop-injector/releases">
+						<span class="js-download-or-soon">Download for </span> <span class="js-os"></span>
+					</a>
+					<a href="#" class="is-chrome">
+						<span>Add to Chrome</span>
+					</a>
+				</div>
 
-        <div class="l-text">
-            <div class="c-intro">
-                <h1>Figma Plugin Manager</h1>
-                <p>Install and manage third-party Developer extensions in Figma</p>
-            </div>
+				<div class="c-caption">
+					<h4>Available Windows, Mac and Chrome</h4>
+					<small class="version">v 1.0.0 | <a href="#" target="_blank">See Release Notes</a></small>
+				</div>
+			</div>
 
-            <div class="c-actions">
-                <a href="https://github.com/cdes/figma-plugins-desktop-injector/releases">
-                    <span class="js-download-or-soon">Download for </span> <span class="js-os"></span>
-                </a>
-                <a href="#" class="is-chrome">
-                    <span>Add to Chrome</span>
-                </a>
-            </div>
+			<div class="c-shot">
+				<img src="./assets/images/panel.png" alt="Figma Plugin Panel Screenshot of the UI" />
+			</div>
+		</main>
 
-            <div class="c-caption">
-                <h4>Available online; on Windows, Mac or Linux</h4>
-                <small>v 0.1.0 | <a href="#" target="_blank">See Release Notes</a></small>
-            </div>
-        </div>
+		<footer>
+			<ul class="c-socials">
+				<li><a href="https://github.com/jachui/figma-plugin-manager" class="c-socials_github"></a></li>
+				<li><a href="https://spectrum.chat/figma-plugins/" class="c-socials_spectrum"></a></li>
+			</ul>
+		</footer>
 
-        <div class="c-shot">
-            <img src="./assets/images/panel.png" alt="Figma Plugin Panel Screenshot of the UI">
-        </div>
+		<div class="bg">
+			<css-doodle>
+				:doodle { @grid: 5 / 80rem; @shape: circle; } border-radius: 1000px; border: 1px dotted transparent; --r:
+				@rand(360deg); --n: calc( @abs(@abs(@row() - 8) + @abs(@col() - 8) - 15) / 15); transform: rotate(var(--r));
+				border-left-color: @pick(#F24E1E, #FF7262, #A259FF, #1ABCFE, #0ACF83); animation: spin calc(2s / var(--n))
+				linear infinite; @keyframes spin { to { transform: rotate( calc(var(--r) + @pick(1turn, -1turn))); } }
+			</css-doodle>
+		</div>
 
-    </main>
-
-    <footer>
-        <ul class="c-socials">
-            <li><a href="https://github.com/jachui/figma-plugin-manager" class="c-socials_github"></a></li>
-            <li><a href="https://spectrum.chat/figma-plugins/" class="c-socials_spectrum"></a></li>
-        </ul>
-    </footer>
-
-    <div class="bg">
-        <css-doodle>
-            :doodle {
-                @grid: 5 / 80rem;
-                @shape: circle;
-              }
-              
-              border-radius: 1000px;
-              border: 1px dotted transparent;
-               
-              --r: @rand(360deg);
-              --n: calc( @abs(@abs(@row() - 8) + @abs(@col() - 8) - 15) / 15);
-             
-              transform: rotate(var(--r));
-              border-left-color: @pick(#F24E1E, #FF7262, #A259FF, #1ABCFE, #0ACF83);
-              
-              animation: spin calc(2s / var(--n)) linear infinite;
-              
-              @keyframes spin {
-                to { 
-                  transform: rotate( calc(var(--r) + @pick(1turn, -1turn)));
-                }
-              }
-        </css-doodle>
-    </div>
-
-    <script src="assets/app.js"></script>
-</body>
-
+		<script src="assets/app.js"></script>
+	</body>
 </html>

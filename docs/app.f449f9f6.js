@@ -10906,7 +10906,7 @@ function () {
 
         case 'Win32' || 'Win16' || 'Windows':
           osLabel.innerHTML = 'Windows';
-          downloadOrSoon.innerHTML = 'Coming soon to';
+          downloadOrSoon.innerHTML = 'Download on';
           osLabel.parentElement.classList.add('is-windows');
           fetch('https://api.github.com/repos/figma-plus/installer/releases', {
             cache: 'no-cache'

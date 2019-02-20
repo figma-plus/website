@@ -308,7 +308,6 @@ nav a {
         background-size: contain;
     }
 
-    &.is-windows, 
     &.is-linux {
         display: none;
     }

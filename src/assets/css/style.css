@@ -346,6 +346,7 @@ footer {
     margin-bottom: 1em;
 }
 
+@svg-load twitterIcon url(../images/icn-twitter.svg);
 @svg-load githubIcon url(../images/icn-github.svg);
 @svg-load chromeIcon url(../images/icn-chrome.svg);
 @svg-load spectrumIcon url(../images/icn-spectrum.svg);
@@ -364,6 +365,10 @@ footer {
         &:hover {
             animation: socialIcon 0.85s ease normal forwards;
         }
+    }
+
+    &_twitter {
+        background: svg-inline(twitterIcon);
     }
 
     &_github {

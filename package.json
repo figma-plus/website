@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "parcel src/index.html --out-dir docs",
-    "build": "parcel build src/index.html --out-dir docs"
+    "dev": "parcel src/*.html --out-dir docs",
+    "build": "parcel build src/*.html --out-dir docs"
   },
   "dependencies": {
     "gsap": "^2.0.2",

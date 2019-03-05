@@ -10879,6 +10879,7 @@ function () {
     this.handleDisabledLinks();
     this.handleVersion();
     this.handlePageLoading();
+    this.handleTeamModal();
   }
 
   _createClass(App, [{
@@ -11009,6 +11010,21 @@ function () {
         opacity: 0
       });
     }
+  }, {
+    key: "handleTeamModal",
+    value: function handleTeamModal() {
+      var teamLink = document.querySelector('[data-team]');
+      var teamModal = document.querySelector('.team');
+      var doodle = document.querySelector('css-doodle');
+      teamLink.addEventListener('click', function () {
+        doodle.style.display = 'none';
+        teamModal.classList.add('is-open');
+      });
+      teamModal.addEventListener('click', function () {
+        doodle.style.display = 'block';
+        teamModal.classList.remove('is-open');
+      });
+    }
   }]);
 
   return App;
@@ -11040,7 +11056,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49618" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49219" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

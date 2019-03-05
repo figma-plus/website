@@ -13,6 +13,7 @@ class App {
 		this.handleDisabledLinks();
 		this.handleVersion();
 		this.handlePageLoading();
+		this.handleTeamModal();
 	}
 
 	handleOS() {
@@ -114,5 +115,21 @@ class App {
 		masterTL
 			.staggerFrom(content.children, 0.5, { opacity: 0, y: 40 }, 0.1)
 			.from(['header', 'footer'], 1, { opacity: 0 });
+	}
+
+	handleTeamModal() {
+		let teamLink = document.querySelector('[data-team]');
+		let teamModal = document.querySelector('.team');
+		let doodle = document.querySelector('css-doodle');
+
+		teamLink.addEventListener('click', () => {
+			doodle.style.display = 'none';
+			teamModal.classList.add('is-open');
+		})
+
+		teamModal.addEventListener('click', () => {
+			doodle.style.display = 'block';
+			teamModal.classList.remove('is-open');
+		})
 	}
 }

@@ -118,18 +118,33 @@ class App {
 	}
 
 	handleTeamModal() {
-		let teamLink = document.querySelector('[data-team]');
-		let teamModal = document.querySelector('.team');
+		let modalsLinks = {
+			team: {
+				open: '[data-team]',
+				node: '.team',
+			},
+			video: {
+				open: '[data-video]',
+				node: '.video-teaser',
+			}
+		}
+
 		let doodle = document.querySelector('css-doodle');
 
-		teamLink.addEventListener('click', () => {
-			doodle.style.display = 'none';
-			teamModal.classList.add('is-open');
-		})
+		Object.keys(modalsLinks).forEach(el => {
+			let modalOpen = document.querySelector(modalsLinks[el].open),
+				modalTarget = document.querySelector(modalsLinks[el].node),
+				modalClose = modalTarget.querySelector('.modal-close');
 
-		teamModal.addEventListener('click', () => {
-			doodle.style.display = 'block';
-			teamModal.classList.remove('is-open');
+			modalOpen.addEventListener('click', () => {
+				doodle.style.display = 'none';
+				modalTarget.classList.add('is-open');
+			})
+
+			modalClose.addEventListener('click', () => {
+				doodle.style.display = 'block';
+				modalTarget.classList.remove('is-open');
+			})
 		})
 	}
 }

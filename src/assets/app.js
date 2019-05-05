@@ -13,7 +13,8 @@ class App {
 		this.handleDisabledLinks();
 		this.handleVersion();
 		this.handlePageLoading();
-		this.handleTeamModal();
+		this.handleModal();
+		this.handelVideo();
 	}
 
 	handleOS() {
@@ -105,29 +106,29 @@ class App {
 			.from(logos, 0.5, { y: window.innerHeight / 2 - logos.clientHeight - 80, delay: 0.5 });
 
 		masterTL
-			.from(
-				panelShot, 0.5, { opacity: 0, y: 40, scale: 0.95, transformOrigin: 'center bottom' }, 's-shot'
-			)
-			.from(
-				bg, 1, { opacity: 0, scale: 0.9, transformOrigin: 'center bottom' }, 's-shot'
-			);
+			.from(panelShot, 0.5, { opacity: 0, y: 40, scale: 0.95, transformOrigin: 'center bottom' }, 's-shot')
+			.from(bg, 1, { opacity: 0, scale: 0.9, transformOrigin: 'center bottom' }, 's-shot');
 
 		masterTL
 			.staggerFrom(content.children, 0.5, { opacity: 0, y: 40 }, 0.1)
 			.from(['header', 'footer'], 1, { opacity: 0 });
 	}
 
-	handleTeamModal() {
+	handleModal() {
 		let modalsLinks = {
 			team: {
 				open: '[data-team]',
-				node: '.team',
+				node: '.team'
 			},
 			video: {
 				open: '[data-video]',
-				node: '.video-teaser',
+				node: '.video-teaser'
+			},
+			guide: {
+				open: '[data-guide]',
+				node: '.installation-guide'
 			}
-		}
+		};
 
 		let doodle = document.querySelector('css-doodle');
 
@@ -139,12 +140,24 @@ class App {
 			modalOpen.addEventListener('click', () => {
 				doodle.style.display = 'none';
 				modalTarget.classList.add('is-open');
-			})
+				if (el === 'video') this.player.play();
+			});
 
 			modalClose.addEventListener('click', () => {
 				doodle.style.display = 'block';
 				modalTarget.classList.remove('is-open');
-			})
-		})
+				if (el === 'video') this.player.stop();
+			});
+		});
+	}
+
+	handelVideo() {
+		this.player = new Plyr('#player');
+		this.player.on('ended', event => {
+			let doodle = document.querySelector('css-doodle');
+			let modalTarget = document.querySelector('.video-teaser');
+			doodle.style.display = 'block';
+			modalTarget.classList.remove('is-open');
+		});
 	}
 }

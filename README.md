@@ -1,7 +1,9 @@
-# The website for Figma plugins manager.
+# The website for Figma Plus
 
 ### Development
+
 `yarn dev`
 
 ### Building for Production
+
 `yarn build`

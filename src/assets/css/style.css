@@ -434,6 +434,7 @@ footer {
 	clip-path: circle(0% at 50% 50%);
 	transition: 1s clip-path;
 	will-change: clip-path;
+	display: none;
 
 	.l-container {
 		width: 100%;
@@ -441,6 +442,8 @@ footer {
 
 	&.is-open {
 		clip-path: circle(100% at 50% 50%);
+		pointer-events: all;
+		display: flex;
 	}
 }
 
@@ -494,9 +497,11 @@ iframe.guide {
 	transition: 1s clip-path;
 	will-change: clip-path;
 	color: #fff;
-
+	display: none;
+	
 	&.is-open {
 		clip-path: circle(100% at 50% 50%);
+		display: flex;
 	}
 
 	&-grid {

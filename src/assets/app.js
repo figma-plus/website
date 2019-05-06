@@ -30,7 +30,9 @@ class App {
 				fetch('https://api.github.com/repos/figma-plus/installer/releases', { cache: 'no-cache' })
 					.then(response => response.json())
 					.then(releases => {
-						downloadLink.href = releases[0].assets.find(asset => asset.name.includes('mac')).browser_download_url;
+						downloadLink.href = releases[0].assets.find(asset =>
+							asset.name.toLowerCase().includes('mac')
+						).browser_download_url;
 					});
 				break;
 			case 'Win32' || 'Win16' || 'Windows':
@@ -40,7 +42,9 @@ class App {
 				fetch('https://api.github.com/repos/figma-plus/installer/releases', { cache: 'no-cache' })
 					.then(response => response.json())
 					.then(releases => {
-						downloadLink.href = releases[0].assets.find(asset => asset.name.includes('exe')).browser_download_url;
+						downloadLink.href = releases[0].assets.find(asset =>
+							asset.name.toLowerCase().includes('windows')
+						).browser_download_url;
 					});
 				break;
 			case 'Linux':

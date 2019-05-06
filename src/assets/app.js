@@ -43,7 +43,7 @@ class App {
 					.then(response => response.json())
 					.then(releases => {
 						downloadLink.href = releases[0].assets.find(asset =>
-							asset.name.toLowerCase().includes('windows')
+							asset.name.toLowerCase().includes('exe')
 						).browser_download_url;
 					});
 				break;

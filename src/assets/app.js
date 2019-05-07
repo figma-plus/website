@@ -53,6 +53,7 @@ class App {
 				osLabel.parentElement.classList.add('is-linux');
 				break;
 			default:
+				document.querySelector('.c-actions').remove();
 				break;
 		}
 	}

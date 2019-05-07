@@ -242,8 +242,13 @@ nav a {
 		font-size: 30px;
 	}
 
-	p {
+	.tagline {
+		margin-bottom: 1.5em;
+	}
+
+	.disclaimer {
 		margin-bottom: 3em;
+		font-size: 14px;
 	}
 }
 
@@ -498,7 +503,7 @@ iframe.guide {
 	will-change: clip-path;
 	color: #fff;
 	display: none;
-	
+
 	&.is-open {
 		clip-path: circle(100% at 50% 50%);
 		display: flex;

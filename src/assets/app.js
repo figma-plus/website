@@ -8,6 +8,7 @@ class App {
 	constructor() {
 		this.os = navigator.platform;
 		this.isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+		this.isEdge = navigator.userAgent.includes('Edge');
 		this.handleOS();
 		this.handleIsChrome();
 		this.handleIsEdge();
@@ -64,7 +65,7 @@ class App {
 	}
 
 	handleIsEdge() {
-		if (navigator.userAgent.includes('Edge')) {
+		if (this.isEdge) {
 			document.querySelector('css-doodle').remove();
 		}
 	}
@@ -149,13 +150,13 @@ class App {
 				modalClose = modalTarget.querySelector('.modal-close');
 
 			modalOpen.addEventListener('click', () => {
-				doodle.style.display = 'none';
+				if (!this.isEdge) doodle.style.display = 'none';
 				modalTarget.classList.add('is-open');
 				if (el === 'video') this.player.play();
 			});
 
 			modalClose.addEventListener('click', () => {
-				doodle.style.display = 'block';
+				if (!this.isEdge) doodle.style.display = 'block';
 				modalTarget.classList.remove('is-open');
 				if (el === 'video') this.player.stop();
 			});
@@ -167,7 +168,7 @@ class App {
 		this.player.on('ended', event => {
 			let doodle = document.querySelector('css-doodle');
 			let modalTarget = document.querySelector('.video-teaser');
-			doodle.style.display = 'block';
+			if (!this.isEdge) doodle.style.display = 'block';
 			modalTarget.classList.remove('is-open');
 		});
 	}

@@ -10,6 +10,7 @@ class App {
 		this.isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 		this.handleOS();
 		this.handleIsChrome();
+		this.handleIsEdge();
 		this.handleDisabledLinks();
 		this.handleVersion();
 		this.handlePageLoading();
@@ -60,6 +61,12 @@ class App {
 	handleIsChrome() {
 		let chromeButton = document.querySelector('.is-chrome');
 		if (!this.isChrome) chromeButton.style.display = 'none';
+	}
+
+	handleIsEdge() {
+		if (navigator.userAgent.includes('Edge')) {
+			document.querySelector('css-doodle').remove();
+		}
 	}
 
 	handleDisabledLinks() {

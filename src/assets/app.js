@@ -9,14 +9,8 @@ class App {
 		this.os = navigator.platform;
 		this.isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 		this.isEdge = navigator.userAgent.includes('Edge');
-		this.handleOS();
-		this.handleIsChrome();
-		this.handleIsEdge();
-		this.handleDisabledLinks();
-		this.handleVersion();
 		this.handlePageLoading();
 		this.handleModal();
-		this.handelVideo();
 	}
 
 	handleOS() {
@@ -131,14 +125,6 @@ class App {
 			team: {
 				open: '[data-team]',
 				node: '.team'
-			},
-			video: {
-				open: '[data-video]',
-				node: '.video-teaser'
-			},
-			guide: {
-				open: '[data-guide]',
-				node: '.installation-guide'
 			}
 		};
 

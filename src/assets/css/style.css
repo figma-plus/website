@@ -145,7 +145,8 @@ nav {
 	display: flex;
 }
 
-nav a {
+nav a,
+a.learn-more {
 	margin-left: 2.5em;
 	font-size: 14px;
 	@extend %link;
@@ -174,6 +175,10 @@ nav a {
 		transform: translateY(24px);
 		opacity: 1;
 	}
+}
+
+a.learn-more {
+	font-size: 16px;
 }
 
 @keyframes navLink {
@@ -248,7 +253,7 @@ nav a {
 
 	.disclaimer {
 		margin-bottom: 3em;
-		font-size: 14px;
+		font-size: 16px;
 	}
 }
 
